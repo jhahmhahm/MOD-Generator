@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOD Generator</title>
+</head>
+<body>
+    <div class ="dropdown" id ="dropdown">
+        <form>
+            <label for ="select-mod">What type of MOD are you creating?</label>
+            <select name ="select-mod" id ="select-mod" onchange = "getmodType()">
+                <option value="" selected = "selected">--Please Choose an Option</option>
+                <option value="handyman">Handyman</option>
+                <option value="ntp">NTP</option>
+                <option value="rent">Rent</option>
+                <option value="deob">De-Obligation</option>
+            </select>
+        </form>
+    </div>
+
+    <div class = "handymanform" id ="handymanform">
+        <form>
+            <label for="ic">IC:</label>
+                <input type="text" name ="ic" required>
+
+            <label for="amount">Dollar Amount:</label>
+                <input type="text" name ="amount" required>
+
+            <label for="location">Project Location:</label>
+                <input type="text" name ="location" required>
+            
+            <button onclick = "alert('hello')";>Generate MOD</button>
+        </form>
+    </div>
+
+    <script>
+        let dropdown = document.getElementById("select-mod");
+        function getmodType(){
+            let modType = dropdown.value;
+            console.log(modType);
+        }
+       
+    </script>
+</body>
+</html>
