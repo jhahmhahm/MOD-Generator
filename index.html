@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href ="styles.css">
     <title>MOD Generator</title>
 </head>
 <body>
-    <div class ="dropdown" id ="dropdown">
+    <div class ="dropdown" id ="dropdown" value ="x">
         <form>
-            <label for ="select-mod">What type of MOD are you creating?</label>
-            <select name ="select-mod" id ="select-mod" onchange = "getmodType()">
-                <option value="" selected = "selected">--Please Choose an Option</option>
+            <label for ="select-mod" >What type of MOD are you creating?</label>
+            <select name ="select-mod" id ="select-mod" onchange = "getmodType()" >
+                <option value="x" selected = true>--Please Choose an Option</option>
                 <option value="handyman">Handyman</option>
                 <option value="ntp">NTP</option>
                 <option value="rent">Rent</option>
@@ -22,25 +23,103 @@
 
     <div class = "handymanform" id ="handymanform">
         <form>
+            <label for="modnumHandy">MOD #: </label>
+                <input type="text" name = "modnumHandy">
+
+            <label for="reqnumHandy"></label>
+                <input type="text" name ="reqnumHandy">
             <label for="ic">IC:</label>
-                <input type="text" name ="ic" required>
-
+                <input type="text" name ="ic">
             <label for="amount">Dollar Amount:</label>
-                <input type="text" name ="amount" required>
-
+                <input type="text" name ="amountHandy">
             <label for="location">Project Location:</label>
-                <input type="text" name ="location" required>
+                <input type="text" name ="addressHandy">
+            <button onclick = "alert('hello')";>Generate MOD</button>
+        </form>
+    </div>
+
+    <div class = "rentform" id ="rentform">
+        <form>
+            <label for="modnumRent">MOD #:</label>
+                <input type="text" name ="modnumRent">
+            <label for ="reqnumRent">REQ #:</label>
+                <input type="text" name = "reqnumRent">
+            <label for="invoicenumRent"> Invoice #:</label>
+                <input type="text" name = "invoicenumRent">
+            <label for="amountRent"> Rent Amount :</label>
+                <input type="text" name = "amountRent">
+            <button onclick ="alert('hello')";>Generate MOD</button>
+        </form>
+    </div>
+
+    <div class = "ntpform" id ="ntpform">
+        <form>
+            <label for="modnumNTP">MOD #: </label>
+                <input type="text" name = "modnumNTP">
+
+            <label for="reqnumNTP"></label>
+                <input type="text" name ="reqnumNTP">
+            <label for="reasonNTP">Purpose of MOD:</label>
+                <input type="text" name ="reasonNTP">
+            <label for="addressNTP">Project Location:</label>
+                <input type="text" name ="addressNTP">
+            <label for="sowNum">SOW Number:</label>
+                <input type="text" name ="sowNum">
+            <label for="sowDate">SOW Date:</label>
+                <input type="text" name ="sowDate">
+            <label for="proposalDate">Lessor's Proposal Date:</label>
+                <input type="text" name ="proposalDate">
+            <label for="amountNTP">Project Cost:</label>
+                <input type="text" name ="amountNTP">
+            <label for="dateNTP">Period of Performance</label>
+                <input type="date" name = "dateNTP">
             
             <button onclick = "alert('hello')";>Generate MOD</button>
         </form>
     </div>
 
+
     <script>
         let dropdown = document.getElementById("select-mod");
+        let handymanform = document.getElementById("handymanform");
+        let rentform = document.getElementById("rentform");
+        let ntpform = document.getElementById("ntpform");
+        let form = document.getElementById("form-container");
+
+
+        let modType
+        dropdown.value = "x";
+
         function getmodType(){
-            let modType = dropdown.value;
+            modType = dropdown.value;
             console.log(modType);
+
+            if(modType === 'x'){
+                handymanform.style.display = "none";
+                rentform.style.display ="none";
+                ntpform.style.display ="none";
+            }
+
+            if(modType === 'handyman'){
+                handymanform.style.display ="block"
+                rentform.style.display ="none";
+                ntpform.style.display ="none";
+            }
+
+            if (modType === "rent"){
+                rentform.style.display ="block";
+                handymanform.style.display ="none";
+                ntpform.style.display = "none";
+            }
+
+            if (modType === "ntp"){
+                ntpform.style.display = "block";
+                handymanform.style.display ="none";
+                rentform.style.display ="none";
+            }
         }
+
+        
        
     </script>
 </body>
