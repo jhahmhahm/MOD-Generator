@@ -22,60 +22,59 @@
     </div>
 
     <div class = "handymanform" id ="handymanform">
-        <form>
+        
             <label for="modnumHandy">MOD #: </label>
-                <input type="text" name = "modnumHandy">
-
-            <label for="reqnumHandy"></label>
-                <input type="text" name ="reqnumHandy">
+                <input type="text" name = "modnumHandy" id="modnumHandy" >
+            <label for="reqnumHandy">REQ #:</label>
+                <input type="text" name = "reqnumHandy" id = "reqnumHandy" >
             <label for="ic">IC:</label>
-                <input type="text" name ="ic">
+                <input type="text" name ="ic" id ="ic" >
             <label for="amount">Dollar Amount:</label>
-                <input type="text" name ="amountHandy">
-            <label for="location">Project Location:</label>
-                <input type="text" name ="addressHandy">
-            <button onclick = "alert('hello')";>Generate MOD</button>
-        </form>
+                <input type="text" name ="amountHandy" id = "amountHandy" >
+            <label for="addressHandy">Project Location:</label>
+                <input type="text" name ="addressHandy" id ="addressHandy" >
+            <button id ="handybtn">Generate MOD</button>
+
+        
     </div>
 
     <div class = "rentform" id ="rentform">
-        <form>
+        
             <label for="modnumRent">MOD #:</label>
-                <input type="text" name ="modnumRent">
+                <input type="text" name ="modnumRent" id ="modnumRent">
             <label for ="reqnumRent">REQ #:</label>
-                <input type="text" name = "reqnumRent">
+                <input type="text" name = "reqnumRent" id ="reqnumRent" >
             <label for="invoicenumRent"> Invoice #:</label>
-                <input type="text" name = "invoicenumRent">
+                <input type="text" name = "invoicenumRent" id ="invoicenumRent" >
             <label for="amountRent"> Rent Amount :</label>
-                <input type="text" name = "amountRent">
-            <button onclick ="alert('hello')";>Generate MOD</button>
-        </form>
+                <input type="text" name = "amountRent" id ="amountRent" >
+            <button id ="rentbtn">Generate MOD</button>
+
     </div>
 
     <div class = "ntpform" id ="ntpform">
-        <form>
+        
             <label for="modnumNTP">MOD #: </label>
                 <input type="text" name = "modnumNTP">
-
             <label for="reqnumNTP"></label>
-                <input type="text" name ="reqnumNTP">
+                <input type="text" name ="reqnumNTP" id ="reqnumNTP">
             <label for="reasonNTP">Purpose of MOD:</label>
-                <input type="text" name ="reasonNTP">
+                <input type="text" name ="reasonNTP" id ="reasonNTP">
             <label for="addressNTP">Project Location:</label>
-                <input type="text" name ="addressNTP">
+                <input type="text" name ="addressNTP" id ="addressNTP">
             <label for="sowNum">SOW Number:</label>
-                <input type="text" name ="sowNum">
+                <input type="text" name ="sowNum" id = "sowNum">
             <label for="sowDate">SOW Date:</label>
-                <input type="text" name ="sowDate">
+                <input type="text" name ="sowDate" id ="sowDate">
             <label for="proposalDate">Lessor's Proposal Date:</label>
-                <input type="text" name ="proposalDate">
+                <input type="text" name ="proposalDate" id ="proposalDate" >
             <label for="amountNTP">Project Cost:</label>
-                <input type="text" name ="amountNTP">
+                <input type="text" name ="amountNTP" id ="amountNTP" >
             <label for="dateNTP">Period of Performance</label>
-                <input type="date" name = "dateNTP">
+                <input type="date" name = "dateNTP" id ="dateNTP" >
             
-            <button onclick = "alert('hello')";>Generate MOD</button>
-        </form>
+          <button id ="ntpbtn">Generate MOD</button>
+        
     </div>
 
 
@@ -83,9 +82,9 @@
         let dropdown = document.getElementById("select-mod");
         let handymanform = document.getElementById("handymanform");
         let rentform = document.getElementById("rentform");
+        let rent = document.getElementById("rent");
         let ntpform = document.getElementById("ntpform");
         let form = document.getElementById("form-container");
-
 
         let modType
         dropdown.value = "x";
@@ -118,8 +117,6 @@
                 rentform.style.display ="none";
             }
         }
-
-        
        
     </script>
 </body>
