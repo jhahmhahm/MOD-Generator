@@ -39,7 +39,7 @@
     </div>
 
     <div class = "rentform" id ="rentform">
-        
+        <div class ="formcontainer">
             <label for="modnumRent">MOD #:</label>
                 <input type="text" name ="modnumRent" id ="modnumRent" class ="rentMOD">
             <label for ="reqnumRent">REQ #:</label>
@@ -51,7 +51,10 @@
             <label for="amountRent"> Rent Amount :</label>
                 <input type="text" name = "amountRent" id ="amountRent" class ="rentMOD">
             <button id ="rentbtn" onclick ="generateRentMOD()">Generate MOD</button>
-
+        </div>
+    <div class = "textarea">
+            <textarea name ="textareaRent" id = "textarea" rows = "20" cols ="90"></textarea>
+    </div>
     </div>
 
     <div class = "utilityform" id ="utilityform">
@@ -67,6 +70,9 @@
         <label for="amountUtility"> Rent Amount :</label>
             <input type="text" name = "amountUtility" id ="amountUtility" class ="utilityMOD">
         <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
+
+        <textarea name ="textareaUtility" id = "textarea" rows = "20" cols ="80"></textarea>
+
 
 </div>
 
@@ -99,6 +105,7 @@
             <label for="lcoNTP">LCO:</label>
                 <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
             
+            
           <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
         
     </div>
@@ -112,6 +119,7 @@
         let rent = document.getElementById("rent");
         let ntpform = document.getElementById("ntpform");
         let form = document.getElementById("form-container");
+        let textarea = document.getElementById("textarea");
 
         dropdown.value = "x";
 
@@ -134,7 +142,7 @@
             }
 
             if (modType === "rent"){
-                rentform.style.display ="block";
+                rentform.style.display ="flex";
                 handymanform.style.display ="none";
                 ntpform.style.display = "none";
                 utilityform.style.display="none";
@@ -148,7 +156,7 @@
             }
 
             if(modType === 'utilityform'){
-                utilityform.style.display="block";
+                utilityform.style.display="flex";
                 handymanform.style.display = "none";
                 rentform.style.display ="none";
                 ntpform.style.display ="none";
@@ -158,12 +166,16 @@
             let rentData = document.querySelectorAll(".rentMOD");
                 
             const lineItemRent = `MOD-${rentData[0].value}, REQ. ${rentData[1].value}, Invoice: ${rentData[3].value} will cover ${rentData[2].value} Rent in the amount of ${rentData[4].value} in accordance with the lease.`;
+
+            textarea.textContent = lineItemRent;
         }
 
         function generateUtilityMOD(){
             let utilityData = document.querySelectorAll(".utilityMOD");
                 const lineItemUtility = `MOD-${utilityData[0].value}, REQ. ${utilityData[1].value}, Invoice: ${utilityData[3].value} will cover ${utilityData[2].value} Utility Rent in the amount of ${utilityData[4].value} in accordance with the lease.`;
                 alert(lineItemUtility);
+
+
         }
 
         function generateHandymanMOD(){

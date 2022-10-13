@@ -13,3 +13,7 @@
 .utilityform{
     display:none;
 }
+
+.textarea{
+    display:flex;
+}
