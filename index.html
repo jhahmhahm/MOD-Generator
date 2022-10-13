@@ -24,16 +24,16 @@
     <div class = "handymanform" id ="handymanform">
         
             <label for="modnumHandy">MOD #: </label>
-                <input type="text" name = "modnumHandy" id="modnumHandy" >
+                <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD">
             <label for="reqnumHandy">REQ #:</label>
-                <input type="text" name = "reqnumHandy" id = "reqnumHandy" >
+                <input type="text" name = "reqnumHandy" id = "reqnumHandy" class ="handyMOD">
             <label for="ic">IC:</label>
-                <input type="text" name ="ic" id ="ic" >
+                <input type="text" name ="ic" id ="ic" class ="handyMOD">
             <label for="amount">Dollar Amount:</label>
-                <input type="text" name ="amountHandy" id = "amountHandy" >
+                <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD">
             <label for="addressHandy">Project Location:</label>
-                <input type="text" name ="addressHandy" id ="addressHandy" >
-            <button id ="handybtn">Generate MOD</button>
+                <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
+            <button id ="handybtn" onclick ="generateHandymanMOD()">Generate MOD</button>
 
         
     </div>
@@ -41,39 +41,65 @@
     <div class = "rentform" id ="rentform">
         
             <label for="modnumRent">MOD #:</label>
-                <input type="text" name ="modnumRent" id ="modnumRent">
+                <input type="text" name ="modnumRent" id ="modnumRent" class ="rentMOD">
             <label for ="reqnumRent">REQ #:</label>
-                <input type="text" name = "reqnumRent" id ="reqnumRent" >
+                <input type="text" name = "reqnumRent" id ="reqnumRent" class ="rentMOD">
+            <label for="monthyearRent">Month and Year:</label>
+                <input type="text" name ="monthyearRent" id ="monthyearRent" class ="rentMOD">
             <label for="invoicenumRent"> Invoice #:</label>
-                <input type="text" name = "invoicenumRent" id ="invoicenumRent" >
+                <input type="text" name = "invoicenumRent" id ="invoicenumRent" class ="rentMOD">
             <label for="amountRent"> Rent Amount :</label>
-                <input type="text" name = "amountRent" id ="amountRent" >
-            <button id ="rentbtn">Generate MOD</button>
+                <input type="text" name = "amountRent" id ="amountRent" class ="rentMOD">
+            <button id ="rentbtn" onclick ="generateRentMOD()">Generate MOD</button>
 
     </div>
+
+    <div class = "utilityform" id ="utilityform">
+        
+        <label for="modnumUtility">MOD #:</label>
+            <input type="text" name ="modnumUtility" id ="modnumUtility" class ="utilityMOD">
+        <label for ="reqnumUtility">REQ #:</label>
+            <input type="text" name = "reqnumUtility" id ="reqnumUtility" class ="utilityMOD">
+        <label for="monthyearUtility">Month and Year:</label>
+            <input type="text" name ="monthyearUtility" id ="monthyearUtility" class ="utilityMOD">
+        <label for="invoicenumUtility"> Invoice #:</label>
+            <input type="text" name = "invoicenumUtility" id ="invoicenumUtility" class ="utilityMOD">
+        <label for="amountUtility"> Rent Amount :</label>
+            <input type="text" name = "amountUtility" id ="amountUtility" class ="utilityMOD">
+        <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
+
+</div>
 
     <div class = "ntpform" id ="ntpform">
         
             <label for="modnumNTP">MOD #: </label>
-                <input type="text" name = "modnumNTP">
-            <label for="reqnumNTP"></label>
-                <input type="text" name ="reqnumNTP" id ="reqnumNTP">
+                <input type="text" name = "modnumNTP" class ="ntpMOD">
+            <label for="reqnumNTP">REQ. :</label>
+                <input type="text" name ="reqnumNTP" id ="reqnumNTP" class ="ntpMOD">
             <label for="reasonNTP">Purpose of MOD:</label>
-                <input type="text" name ="reasonNTP" id ="reasonNTP">
+                <input type="text" name ="reasonNTP" id ="reasonNTP" class ="ntpMOD">
             <label for="addressNTP">Project Location:</label>
-                <input type="text" name ="addressNTP" id ="addressNTP">
+                <input type="text" name ="addressNTP" id ="addressNTP" class ="ntpMOD">
             <label for="sowNum">SOW Number:</label>
-                <input type="text" name ="sowNum" id = "sowNum">
+                <input type="text" name ="sowNum" id = "sowNum" class ="ntpMOD"> 
             <label for="sowDate">SOW Date:</label>
-                <input type="text" name ="sowDate" id ="sowDate">
+                <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD">
             <label for="proposalDate">Lessor's Proposal Date:</label>
-                <input type="text" name ="proposalDate" id ="proposalDate" >
+                <input type="text" name ="proposalDate" id ="proposalDate" class ="ntpMOD">
+            <label for="proposalNum">Lessor's Proposal Date:</label>
+                <input type="text" name ="proposalNum" id ="proposalNum" class ="ntpMOD">
             <label for="amountNTP">Project Cost:</label>
-                <input type="text" name ="amountNTP" id ="amountNTP" >
-            <label for="dateNTP">Period of Performance</label>
-                <input type="date" name = "dateNTP" id ="dateNTP" >
+                <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD">
+            <label for="dateNTP">Period of Performance Start:</label>
+                <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD" >
+            <label for="dateNTP2">Period of Performance End:</label>
+                <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD">
+            <label for="fmNTP">FM:</label>
+                <input type="text" name = "fmNTP" id ="fmNTP" class ="ntpMOD">
+            <label for="lcoNTP">LCO:</label>
+                <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
             
-          <button id ="ntpbtn">Generate MOD</button>
+          <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
         
     </div>
 
@@ -82,42 +108,85 @@
         let dropdown = document.getElementById("select-mod");
         let handymanform = document.getElementById("handymanform");
         let rentform = document.getElementById("rentform");
+        let utilityform = document.getElementById("utilityform");
         let rent = document.getElementById("rent");
         let ntpform = document.getElementById("ntpform");
         let form = document.getElementById("form-container");
 
-        let modType
         dropdown.value = "x";
 
         function getmodType(){
-            modType = dropdown.value;
+            let modType = dropdown.value;
             console.log(modType);
 
             if(modType === 'x'){
                 handymanform.style.display = "none";
                 rentform.style.display ="none";
                 ntpform.style.display ="none";
+                utilityform.style.display="none";
             }
 
             if(modType === 'handyman'){
                 handymanform.style.display ="block"
                 rentform.style.display ="none";
                 ntpform.style.display ="none";
+                utilityform.style.display="none";
             }
 
             if (modType === "rent"){
                 rentform.style.display ="block";
                 handymanform.style.display ="none";
                 ntpform.style.display = "none";
+                utilityform.style.display="none";
             }
 
             if (modType === "ntp"){
                 ntpform.style.display = "block";
                 handymanform.style.display ="none";
                 rentform.style.display ="none";
+                utilityform.style.display="none";
+            }
+
+            if(modType === 'utilityform'){
+                utilityform.style.display="block";
+                handymanform.style.display = "none";
+                rentform.style.display ="none";
+                ntpform.style.display ="none";
             }
         }
-       
+        function generateRentMOD(){
+            let rentData = document.querySelectorAll(".rentMOD");
+                
+            const lineItemRent = `MOD-${rentData[0].value}, REQ. ${rentData[1].value}, Invoice: ${rentData[3].value} will cover ${rentData[2].value} Rent in the amount of ${rentData[4].value} in accordance with the lease.`;
+        }
+
+        function generateUtilityMOD(){
+            let utilityData = document.querySelectorAll(".utilityMOD");
+                const lineItemUtility = `MOD-${utilityData[0].value}, REQ. ${utilityData[1].value}, Invoice: ${utilityData[3].value} will cover ${utilityData[2].value} Utility Rent in the amount of ${utilityData[4].value} in accordance with the lease.`;
+                alert(lineItemUtility);
+        }
+
+        function generateHandymanMOD(){
+            let handyData = document.querySelectorAll(".handyMOD");
+            
+            const lineItemHandy = `MOD-${handyData[0].value}, REQ. ${handyData[1].value}, in the amount of $${handyData[3].value} will cover the ${handyData[2].value} Handyman Contract. Services to be requested through NIH Facility Manager with an approved work request in accordance to the Handyman Services Described below. Lessor Shall not exceed the amount of $${handyData[3].value} including Lessor's fees, for the aggregate Handyman Pluss Services rendered under this agreement. Period of Performace: 12 months from execution of this Modification of Contract.`;
+            
+            alert(lineItemHandy);
+        }
+
+        function generateNtpMOD(){
+           let ntpData = document.querySelectorAll(".ntpMOD");
+
+           const lineItemNtp = `MOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal dated ${ntpData[6].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is $${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.`
+
+           const ntpBeforeLine = `FM: ${ntpData[11].value} LCO: ${ntpData[12].value}`;
+           
+           const ntpAfterLine = 'Notwithstanding Government review, the Lessor is solely responsible for the technical accuracy of this project in meeting all performance requirements of the lease and SOW including meeting Federal, State and Local codes for this project. This document shall not be construed as a waiver of any rights, benefits or interests that the Government has under the Lease contract. All other terms and conditions of the Lease shall remain in full force and effect.';
+
+           const ntpBox14 = `MOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal ${ntpData[7].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is $${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.`;
+
+           alert(ntpAfterLine);
+        }
     </script>
 </body>
 </html>
