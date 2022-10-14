@@ -8,6 +8,9 @@
     <title>MOD Generator</title>
 </head>
 <body>
+<div class ="heading">
+    <a href="https://jhahmhahm.github.io/MOD-Generator/">Home</a>
+</div>
     <div class ="dropdown" id ="dropdown" value ="x">
         <form>
             <label for ="select-mod" >What type of MOD are you creating?</label>
@@ -16,6 +19,7 @@
                 <option value="handyman">Handyman</option>
                 <option value="ntp">NTP</option>
                 <option value="rent">Rent</option>
+                <option value="multirent">Multi-Month Rent</option>
                 <option value ="utility">Utility Rent</option>
                 <option value="deob">De-Obligation</option>
             </select>
@@ -23,7 +27,7 @@
     </div>
 
     <div class = "handymanform" id ="handymanform">
-        
+        <div class ="formcontainer" id = "formcontainer">
             <label for="modnumHandy">MOD #: </label>
                 <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD">
             <label for="reqnumHandy">REQ #:</label>
@@ -34,13 +38,17 @@
                 <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD">
             <label for="addressHandy">Project Location:</label>
                 <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
+            <label for="fmHandy">FM:</label>
+                <input type="text" name = "fmHandy" id ="fmHandy" class ="handyMOD">
+            <label for="lcoHandy">LCO:</label>
+                <input type="text" name = "lcoHandy" id ="lcoHandy" class ="handyMOD">
             <button id ="handybtn" onclick ="generateHandymanMOD()">Generate MOD</button>
-
+        </div> 
         
     </div>
 
     <div class = "rentform" id ="rentform">
-        <div class ="formcontainer">
+        <div class ="formcontainer" id = "formcontainer">
             <label for="modnumRent">MOD #:</label>
                 <input type="text" name ="modnumRent" id ="modnumRent" class ="rentMOD">
             <label for ="reqnumRent">REQ #:</label>
@@ -53,32 +61,47 @@
                 <input type="text" name = "amountRent" id ="amountRent" class ="rentMOD">
             <button id ="rentbtn" onclick ="generateRentMOD()">Generate MOD</button>
         </div>
-    <div class = "textarea">
-            <textarea name ="textareaRent" id = "textarea" rows = "20" cols ="90"></textarea>
+        
     </div>
+
+    <div class = "multirentform" id ="multirentform">
+        <div class ="formcontainer" id = "formcontainer">
+            <label for="modnumRent">MOD #:</label>
+                <input type="text" name ="modnumRent" id ="modnumRent" class ="multirentMOD">
+            <label for ="reqnumRent">REQ #:</label>
+                <input type="text" name = "reqnumRent" id ="reqnumRent" class ="multirentMOD">
+            <label for="monthyearStart">Month Start:</label>
+                <input type="text" name ="monthyearStart" id ="monthyearStart" class ="multirentMOD">
+            <label for="monthyearEnd">Month&Year End:</label>
+                <input type="text" name ="monthyearEnd" id ="monthyearEnd" class ="multirentMOD">
+            <label for="amountRent"> Rent Amount :</label><span class ="input">&#36;
+                <input type="text" name = "amountRent" id ="multiamountRent" class ="nummultirentMOD"></span>
+            <label for="numMonths">Number of Months</label>
+                <input type="text" name ="numMonths" id ="numMonths" class ="nummultirentMOD">
+            <button id ="rentbtn" onclick ="generateMultiRentMOD()">Generate MOD</button>
+        </div>
+        
     </div>
 
     <div class = "utilityform" id ="utilityform">
-        
-        <label for="modnumUtility">MOD #:</label>
-            <input type="text" name ="modnumUtility" id ="modnumUtility" class ="utilityMOD">
-        <label for ="reqnumUtility">REQ #:</label>
-            <input type="text" name = "reqnumUtility" id ="reqnumUtility" class ="utilityMOD">
-        <label for="monthyearUtility">Month and Year:</label>
-            <input type="text" name ="monthyearUtility" id ="monthyearUtility" class ="utilityMOD">
-        <label for="invoicenumUtility"> Invoice #:</label>
-            <input type="text" name = "invoicenumUtility" id ="invoicenumUtility" class ="utilityMOD">
-        <label for="amountUtility"> Rent Amount :</label>
-            <input type="text" name = "amountUtility" id ="amountUtility" class ="utilityMOD">
-        <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
+        <div class ="formcontainer" id = "formcontainer">
+            <label for="modnumUtility">MOD #:</label>
+                <input type="text" name ="modnumUtility" id ="modnumUtility" class ="utilityMOD">
+            <label for ="reqnumUtility">REQ #:</label>
+                <input type="text" name = "reqnumUtility" id ="reqnumUtility" class ="utilityMOD">
+            <label for="monthyearUtility">Month and Year:</label>
+                <input type="text" name ="monthyearUtility" id ="monthyearUtility" class ="utilityMOD">
+            <label for="invoicenumUtility"> Invoice #:</label>
+                <input type="text" name = "invoicenumUtility" id ="invoicenumUtility" class ="utilityMOD">
+            <label for="amountUtility"> Rent Amount :</label>
+                <input type="text" name = "amountUtility" id ="amountUtility" class ="utilityMOD">
+            <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
+        </div>
 
-        <textarea name ="textareaUtility" id = "textarea" rows = "20" cols ="80"></textarea>
-
-
-</div>
+    </div>
 
     <div class = "ntpform" id ="ntpform">
-        
+        <div class ="formcontainer" id = "formcontainer">
             <label for="modnumNTP">MOD #: </label>
                 <input type="text" name = "modnumNTP" class ="ntpMOD">
             <label for="reqnumNTP">REQ. :</label>
@@ -93,7 +116,7 @@
                 <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD">
             <label for="proposalDate">Lessor's Proposal Date:</label>
                 <input type="text" name ="proposalDate" id ="proposalDate" class ="ntpMOD">
-            <label for="proposalNum">Lessor's Proposal Date:</label>
+            <label for="proposalNum">Lessor's Proposal Number:</label>
                 <input type="text" name ="proposalNum" id ="proposalNum" class ="ntpMOD">
             <label for="amountNTP">Project Cost:</label>
                 <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD">
@@ -105,24 +128,23 @@
                 <input type="text" name = "fmNTP" id ="fmNTP" class ="ntpMOD">
             <label for="lcoNTP">LCO:</label>
                 <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
-            
-            
-          <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
-        
+             <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
+            </div>    
     </div>
-
 
     <script>
         let dropdown = document.getElementById("select-mod");
         let handymanform = document.getElementById("handymanform");
         let rentform = document.getElementById("rentform");
+        let multirentform = document.getElementById("multirentform")
         let utilityform = document.getElementById("utilityform");
         let rent = document.getElementById("rent");
         let ntpform = document.getElementById("ntpform");
-        let form = document.getElementById("form-container");
-        let textarea = document.getElementById("textarea");
-
-        dropdown.value = "x";
+        let formcontainer = document.getElementById("formcontainer");
+        let textarea = document.createElement("textarea");
+        
+        
+        dropdown.value = 'x';
 
         function getmodType(){
             let modType = dropdown.value;
@@ -133,72 +155,157 @@
                 rentform.style.display ="none";
                 ntpform.style.display ="none";
                 utilityform.style.display="none";
+                textarea.style.display="none";
+                multirentform.style.display ="none";
+
             }
 
             if(modType === 'handyman'){
-                handymanform.style.display ="block"
+                handymanform.style.display ="flex"
+                handymanform.style.marginTop="200px";
+                formcontainer.style.width = "200px";
+                formcontainer.style.height ="250px";
+                textarea.cols ="90";
+                textarea.rows ="14";
+                textarea.style.margin = "32px"
+                handymanform.appendChild(textarea);
                 rentform.style.display ="none";
                 ntpform.style.display ="none";
                 utilityform.style.display="none";
+                multirentform.style.display ="none";
+                textarea.style.display="flex";
             }
 
             if (modType === "rent"){
                 rentform.style.display ="flex";
+                rentform.style.marginTop="200px";
+                formcontainer.style.width = "200px";
+                formcontainer.style.height ="250px";
+                textarea.cols ="70";
+                textarea.rows ="8";
+                textarea.style.margin = "32px"
+                rentform.appendChild(textarea);
+                handymanform.style.display ="none";
+                multirentform.style.display ="none";
+                ntpform.style.display = "none";
+                utilityform.style.display="none";
+                textarea.style.display="flex";
+            }
+            if (modType === "multirent"){
+                multirentform.style.display ="flex";
+                multirentform.style.marginTop="200px";
+                formcontainer.style.width = "200px";
+                formcontainer.style.height ="250px";
+                textarea.cols ="70";
+                textarea.rows ="8";
+                textarea.style.margin = "32px"
+                multirentform.appendChild(textarea);
                 handymanform.style.display ="none";
                 ntpform.style.display = "none";
                 utilityform.style.display="none";
+                rentform.style.display ="none";
+                textarea.style.display="flex";
             }
-
             if (modType === "ntp"){
-                ntpform.style.display = "block";
+                ntpform.style.display = "flex";
+                ntpform.style.marginTop="200px";
+                formcontainer.style.width = "200px";
+                formcontainer.style.height ="250px";
+                textarea.cols ="90";
+                textarea.rows ="14";
+                textarea.style.margin = "32px"
+                ntpform.appendChild(textarea);
                 handymanform.style.display ="none";
                 rentform.style.display ="none";
+                multirentform.style.display ="none";
                 utilityform.style.display="none";
+                textarea.style.display="flex";
             }
 
-            if(modType === 'utilityform'){
+            if(modType === "utility"){
                 utilityform.style.display="flex";
-                handymanform.style.display = "none";
+                utilityform.style.marginTop="200px";
+                formcontainer.style.width = "200px";
+                formcontainer.style.height ="250px";
+                textarea.cols ="70";
+                textarea.rows ="8";
+                textarea.style.margin = "32px"
+                utilityform.appendChild(textarea);
                 rentform.style.display ="none";
-                ntpform.style.display ="none";
+                handymanform.style.display ="none";
+                multirentform.style.display ="none";
+                ntpform.style.display = "none";
+                textarea.style.display="flex";
+            }
+
+            if(modType === "deob"){
+                
+                rentform.style.display ="none";
+                handymanform.style.display ="none";
+                multirentform.style.display ="none";
+                ntpform.style.display = "none";
             }
         }
+
         function generateRentMOD(){
             let rentData = document.querySelectorAll(".rentMOD");
                 
-            const lineItemRent = `MOD-${rentData[0].value}, REQ. ${rentData[1].value}, Invoice: ${rentData[3].value} will cover ${rentData[2].value} Rent in the amount of ${rentData[4].value} in accordance with the lease.`;
+            const lineItemRent = `Line Item: \nMOD-${rentData[0].value}, REQ. ${rentData[1].value}, Invoice: ${rentData[3].value} will cover ${rentData[2].value} Rent in the amount of ${rentData[4].value} in accordance with the lease.`;
 
             textarea.textContent = lineItemRent;
+        }
+
+        function generateMultiRentMOD(){
+            let multirentData = document.querySelectorAll(".multirentMOD");
+            let nummultirentData = document.querySelectorAll(".nummultirentMOD");
+            let amountRent = document.getElementById("multiamountRent").value;
+                    let numAmountRent = amountRent.replace(",","");
+                            numAmountRent = Number(numAmountRent);
+            let numMonths = document.getElementById('numMonths').value;
+                    numMonths = Number(numMonths);
+            let monthlyRate = (numAmountRent/numMonths).toFixed(2);
+                
+            const lineItemMultiRent = `Line Item: \nMOD-${multirentData[0].value}, REQ. ${multirentData[1].value}, will cover ${multirentData[2].value} through ${multirentData[3].value} Rent for a total of $${nummultirentData[0].value}, at the rate of $${monthlyRate} per month for ${nummultirentData[1].value} months in accordance with the lease.`;
+
+            textarea.textContent = lineItemMultiRent;
         }
 
         function generateUtilityMOD(){
             let utilityData = document.querySelectorAll(".utilityMOD");
                 const lineItemUtility = `MOD-${utilityData[0].value}, REQ. ${utilityData[1].value}, Invoice: ${utilityData[3].value} will cover ${utilityData[2].value} Utility Rent in the amount of ${utilityData[4].value} in accordance with the lease.`;
-                alert(lineItemUtility);
+            textarea.textContent = lineItemUtility;
 
 
+        }
+        function generateNtpMOD(){
+           let ntpData = document.querySelectorAll(".ntpMOD");
+
+           const lineItemNtp = `LINE ITEM: \nMOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal dated ${ntpData[6].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is ${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.\n \n`
+
+           const ntpBeforeLine = `PRINT BEFORE LINE ITEM:\nFM: ${ntpData[11].value} LCO: ${ntpData[12].value}\n \n`;
+           
+           const ntpAfterLine = 'PRINT AFTER LINE ITEM:\nNotwithstanding Government review, the Lessor is solely responsible for the technical accuracy of this project in meeting all performance requirements of the lease and SOW including meeting Federal, State and Local codes for this project. This document shall not be construed as a waiver of any rights, benefits or interests that the Government has under the Lease contract. All other terms and conditions of the Lease shall remain in full force and effect.\n \n';
+
+           const ntpBox14 = `BOX 14 CONTENT:\nMOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal ${ntpData[7].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is ${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.`;
+
+           textarea.textContent = lineItemNtp + ntpBeforeLine + ntpAfterLine + ntpBox14;
         }
 
         function generateHandymanMOD(){
             let handyData = document.querySelectorAll(".handyMOD");
             
-            const lineItemHandy = `MOD-${handyData[0].value}, REQ. ${handyData[1].value}, in the amount of $${handyData[3].value} will cover the ${handyData[2].value} Handyman Contract. Services to be requested through NIH Facility Manager with an approved work request in accordance to the Handyman Services Described below. Lessor Shall not exceed the amount of $${handyData[3].value} including Lessor's fees, for the aggregate Handyman Pluss Services rendered under this agreement. Period of Performace: 12 months from execution of this Modification of Contract.`;
+            const lineItemHandy = `LINE ITEM:\nMOD-${handyData[0].value}, REQ. ${handyData[1].value}, in the amount of ${handyData[3].value} will cover the ${handyData[2].value} Handyman Contract. Services to be requested through NIH Facility Manager with an approved work request in accordance to the Handyman Services Described below. Lessor Shall not exceed the amount of ${handyData[3].value} including Lessor's fees, for the aggregate Handyman Plus Services rendered under this agreement. Period of Performance: 12 months from execution of this Modification of Contract.\n \n`;
+
+            const handyBeforeLine =`PRINT BEFORE LINE ITEM:\nFM: ${handyData[5].value} LCO: ${handyData[6].value}\n \n`;
+
+            const handyAfterLine = `PRINT AFTER LINE ITEM:\nHANDYMAN PLUS SERVICES \n1. Handyman Services:  Handyman Services are intended to be used for incidental projects and one-time requirements.  Prior to any Handyman Service request, a handyman contract modification must be fully executed between the Government and the Lessor. The period of performance for the handyman contract modification shall not exceed 12 consecutive months.  Lessor shall not exceed the amount of ${handyData[3].value} including Lessor's fees for the total Handyman Services rendered under the handyman contract modification.  Examples of Handyman Services include non-permit items, such as hanging whiteboards and pictures, minor non-invasive work, minor MEP (mechanical, electrical and plumbing), occasional overtime HVAC, painting, locksmith, carpentry, etc.\n \n2. Exclusions of Handyman Services:  Examples of services that are not considered Handyman Services include any project requiring a permit, multi-phase projects, base building systems, furniture, and regularly recurring requirements.  Additional exclusions include painting or carpeting a suite or other services that would be considered as a standalone project and funded for that specific requirement.  All questions regarding the appropriate use of Handyman Services shall be directed to the assigned Realty Specialist. \n \n3. Handyman Services exceeding $10,000.00:  If the total value of Handyman Services exceed $10,000.00, excluding Lessor's fees, Lessor shall obtain a minimum of 3 independent bids.  The Lessor will submit to the NIH/ORF Facility Manager (FM) for each requested service a Lessor proposal, 3 independent bids for review and approval.\n \n4. Process to Obtain Handyman Services: \na.Institute/Center (IC) requests Handyman Services through NIH/ORF Facility Manager (FM);\n\nb. FM will prepare a Scope of Work (SOW), the Handyman Service Form, and submit to the Lessor for pricing. FM will determine if the price is fair and reasonable and request the Lessor to sign the Handyman Service Form. 
+            \nc. FM will provide a Lessor's signed Handyman Service Form along with signed MOD and drawdown sheet to the Realty Specialist (RS) for signature. All handyman approvals must be concurred by Facility Manager and approved by Lease Contracting Officer.
+            \nd. RS or their representative will forward the signed Handyman Service Form and   supporting documents to the Lessor and FM as a Notice to Proceed for handyman services and not to exceed the Firm Fix Price listed on the Handyman Service Form.\n`; 
+
+            const handyBox14 = `\nBOX 14 CONTENT:\nTotal amount of MOD-${handyData[0].value} is ${handyData[3].value} to cover ${handyData[2].value} Handyman service funding obligation for ${handyData[4].value}.`;
+
             
-            alert(lineItemHandy);
-        }
-
-        function generateNtpMOD(){
-           let ntpData = document.querySelectorAll(".ntpMOD");
-
-           const lineItemNtp = `MOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal dated ${ntpData[6].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is $${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.`
-
-           const ntpBeforeLine = `FM: ${ntpData[11].value} LCO: ${ntpData[12].value}`;
-           
-           const ntpAfterLine = 'Notwithstanding Government review, the Lessor is solely responsible for the technical accuracy of this project in meeting all performance requirements of the lease and SOW including meeting Federal, State and Local codes for this project. This document shall not be construed as a waiver of any rights, benefits or interests that the Government has under the Lease contract. All other terms and conditions of the Lease shall remain in full force and effect.';
-
-           const ntpBox14 = `MOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[2].value} located at ${ntpData[3].value} in accordance with the SOW ${ntpData[4].value} dated ${ntpData[5].value}, and Lessor's Proposal ${ntpData[7].value}. Firm Fixed Price: The total cost for this project, including Lessor's fee is $${ntpData[8].value}. Period of Performance: ${ntpData[9].value} through ${ntpData[10].value}.`;
-
-           alert(ntpAfterLine);
+            textarea.textContent = lineItemHandy + handyBeforeLine + handyAfterLine + handyBox14;
         }
     </script>
 </body>

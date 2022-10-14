@@ -1,19 +1,57 @@
+body{
+    height: 100vh;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .handymanform{
     display:none;
+    justify-content: center;
+    align-items: center;
 }
 
 .rentform{
     display:none;
+    justify-content: center;
+    align-items: center;
 }
-
+.multirentform{
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
 .ntpform{
     display:none;
+    justify-content: center;
+    align-items: center;
 }
 
 .utilityform{
     display:none;
+    justify-content: center;
+    align-items: center;
 }
 
 .textarea{
-    display:flex;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.formcontainer{
+    display:grid;
 }
