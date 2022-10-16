@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href ="styles.css">
+    <link rel="stylesheet" href="../MOD Creator/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>MOD Generator - Rent</title>
+</head>
+<body>
+    <div class ="navbar">
+        <a href="index.html">Home</a>
+        <div class ="headerDropdown">
+            <button class = "headerbtn">Create A MOD
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class = "headerDropdown-content">
+                <a href="handyman.html">Handyman</a>
+                <a href="ntp.html">NTP</a>
+                <a href="rent.html">Rent</a>
+                <a href="multirent.html">Multi Month Rent</a>
+                <a href="utility.html">Utility Rent</a>
+            </div>
+        </div>
+            <div class ="headerDropdown">
+            <button class = "headerbtn">MOD Steps 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class = "headerDropdown-content">
+                <a href="#">Handyman</a>
+                <a href="#">NTP</a>
+                <a href="#">Re-Occurring</a>
+                <a href="#">De-Obligation</a>
+                <a href="#">Administrative</a>
+            </div>
+        </div>
+    </div>
+    <div class = "rentform" id ="rentform">
+        <div class ="formcontainer" id = "formcontainer">
+            <label for="modnumRent">MOD #:</label>
+                <input type="text" name ="modnumRent" id ="modnumRent" class ="rentMOD">
+            <label for ="reqnumRent">REQ #:</label>
+                <input type="text" name = "reqnumRent" id ="reqnumRent" class ="rentMOD">
+            <label for="monthyearRent">Month and Year:</label>
+                <input type="text" name ="monthyearRent" id ="monthyearRent" class ="rentMOD">
+            <label for="invoicenumRent"> Invoice #:</label>
+                <input type="text" name = "invoicenumRent" id ="invoicenumRent" class ="rentMOD">
+            <label for="amountRent"> Rent Amount :</label>
+                <input type="text" name = "amountRent" id ="amountRent" class ="rentMOD">
+            <button id ="rentbtn" onclick ="generateRentMOD()">Generate MOD</button>
+        </div>
+    <div class ="textbox" id ="textbox">
+        <label for = "modResult">Generated MOD</label>
+            <textarea id = "modResult" name ="modResult" cols ="80" rows = "8" style = "width: 708px; height: 436px;"></textarea>
+    </div>    
+    </div>
+<script>
+     function generateRentMOD(){
+            let rentData = document.querySelectorAll(".rentMOD");
+            let modResult = document.getElementById("modResult");
+                
+            const lineItemRent = `Line Item: \nMOD-${rentData[0].value}, REQ. ${rentData[1].value}, Invoice: ${rentData[3].value} will cover ${rentData[2].value} Rent in the amount of ${rentData[4].value} in accordance with the lease.`;
+
+            modResult.textContent = lineItemRent;
+        }
+</script>
+</body>
+</html>
