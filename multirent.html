@@ -38,20 +38,41 @@
     </div>
     <div class = "multirentform" id ="multirentform">
         <div class ="formcontainer" id = "formcontainer">
-            <label for="modnumRent">MOD #:</label>
+            <div>
+                <label for="modnumRent">MOD #:</label>
                 <input type="text" name ="modnumRent" id ="modnumRent" class ="multirentMOD">
-            <label for ="reqnumRent">REQ #:</label>
+            </div>
+
+            <div>
+                <label for ="reqnumRent">REQ #:</label>
                 <input type="text" name = "reqnumRent" id ="reqnumRent" class ="multirentMOD">
+            </div>
+
+            <span></span> <!-- empty span-->
+
+            <div>
             <label for="monthyearStart">Month Start:</label>
-                <input type="text" name ="monthyearStart" id ="monthyearStart" class ="multirentMOD">
-            <label for="monthyearEnd">Month&Year End:</label>
+            <input type="text" name ="monthyearStart" id ="monthyearStart" class ="multirentMOD">
+            </div>
+
+            <div>
+                <label for="monthyearEnd">Month & Year End:</label>
                 <input type="text" name ="monthyearEnd" id ="monthyearEnd" class ="multirentMOD">
+            </div>
+            
+            <div>
             <label for="amountRent"> Rent Amount :</label><span class ="input">
-                <input type="text" name = "amountRent" id ="multiamountRent" class ="nummultirentMOD"></span>
+                <input type="text" name = "amountRent" id ="multiamountRent" class ="nummultirentMOD" placeholder ="e.g $5,000"></span>
+            </div>
+
+            <div>
             <label for="numMonths">Number of Months</label>
                 <input type="text" name ="numMonths" id ="numMonths" class ="nummultirentMOD">
+            </div>
+
             <button id ="rentbtn" onclick ="generateMultiRentMOD()">Generate MOD</button>
         </div>
+
         <div class ="textbox" id ="textbox">
             <label for = "modResult">Generated MOD</label>
             <textarea id = "modResult" name ="modResult" cols ="80" rows = "8" style = "width: 708px; height: 436px;"></textarea>
@@ -62,12 +83,15 @@
             let multirentData = document.querySelectorAll(".multirentMOD");
             let nummultirentData = document.querySelectorAll(".nummultirentMOD");
             let amountRent = document.getElementById("multiamountRent").value;
-                    let numAmountRent = amountRent.replace(",","").replace("$","");
-                            numAmountRent = Number(numAmountRent);
+                    let numAmountRent = amountRent.replaceAll(",","").replaceAll("$","");
+                        numAmountRent = Number(numAmountRent);
             let numMonths = document.getElementById('numMonths').value;
                     numMonths = Number(numMonths);
-            let monthlyRate = (numAmountRent/numMonths).toFixed(2);
-                
+            let monthlyRate = (numAmountRent/numMonths).toFixed(2).toLocaleString();
+            let nf = new Intl.NumberFormat('en-US');
+                monthlyRate =nf.format(monthlyRate); 
+            
+
             const lineItemMultiRent = `Line Item: \nMOD-${multirentData[0].value}, REQ. ${multirentData[1].value}, will cover ${multirentData[2].value} through ${multirentData[3].value} Rent for a total of ${nummultirentData[0].value} at the rate of $${monthlyRate} per month for ${nummultirentData[1].value} months in accordance with the lease.`;
 
             let modResult = document.getElementById("modResult")

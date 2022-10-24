@@ -38,31 +38,44 @@
     </div>
     <div class = "handymanform" id ="handymanform">
         <div class ="formcontainer" id = "formcontainer">
+        <div>
             <label for="modnumHandy">MOD #: </label>
-                <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD">
+            <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD">
+        </div>
+        <div>
             <label for="reqnumHandy">REQ #:</label>
-                <input type="text" name = "reqnumHandy" id = "reqnumHandy" class ="handyMOD">
+            <input type="text" name = "reqnumHandy" id = "reqnumHandy" class ="handyMOD">
+        </div>
+        <div>
             <label for="ic">IC:</label>
-                <input type="text" name ="ic" id ="ic" class ="handyMOD">
+            <input type="text" name ="ic" id ="ic" class ="handyMOD">
+        </div>
+        <div>
             <label for="amount">Dollar Amount:</label>
-                <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD">
+            <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD">
+        </div>
+        <div>
             <label for="addressHandy">Project Location:</label>
-                <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
-            <div class ="radio">
-                <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
-                <label for ="fm">FM</label>
-                <input type = "radio" id = "po" name ="fmORpo" value ="PO">
-                <label for="po">PO</label>
-                <input type="text" name = "fmHandy" id ="fmHandy" class ="handyMOD">
-            </div>
+            <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
+        </div>      
+        <div class ="radio">
+            <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
+            <label for ="fm">FM</label>
+            <input type = "radio" id = "po" name ="fmORpo" value ="PO">
+            <label for="po">PO</label>
+            <input type="text" name = "fmHandy" id ="fmHandy" class ="handyMOD">
+        </div>
+        <div>
             <label for="lcoHandy">LCO:</label>
-                <input type="text" name = "lcoHandy" id ="lcoHandy" class ="handyMOD">
+            <input type="text" name = "lcoHandy" id ="lcoHandy" class ="handyMOD">
+        </div>
             <button type = "button" id ="handybtn" onclick ="generateHandymanMOD()">Generate MOD</button>
+
         </div> 
-       <div class ="textbox" id ="textbox">
+        <div class ="textbox" id ="textbox">
         <label for = "modResult">Generated MOD</label>
             <textarea id = "modResult" name ="modResult" cols ="80" rows = "8" style = "width: 708px; height: 436px;"></textarea>
-       </div>
+        </div>
     </div>
 <script>
     function generateHandymanMOD(){

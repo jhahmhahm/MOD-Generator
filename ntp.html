@@ -39,39 +39,65 @@
     </div>
     <div class = "ntpform" id ="ntpform">
         <div class ="formcontainer" id = "formcontainer">
+        <div>
             <label for="modnumNTP">MOD #: </label>
                 <input type="text" name = "modnumNTP" class ="ntpMOD">
+        </div>
+        <div>
             <label for="reqnumNTP">REQ#:</label>
                 <input type="text" name ="reqnumNTP" id ="reqnumNTP" class ="ntpMOD">
-            <label for="reasonNTP">Purpose of MOD:</label>
-            <textarea name ="reasonNTP" id ="reasonNTP" target = "reason" class ="ntpMOD" cols ="20" rows = "2"></textarea>
+        </div>
+        <div>
             <label for="addressNTP">Project Location:</label>
                 <input type="text" name ="addressNTP" id ="addressNTP" class ="ntpMOD">
+         </div>  
+        <div>
             <label for="sowNum">SOW Number:</label>
-                <input type="text" name ="sowNum" id = "sowNum" class ="ntpMOD"> 
+            <input type="text" name ="sowNum" id = "sowNum" class ="ntpMOD"> 
+        </div>
+        <div>
             <label for="sowDate">SOW Date:</label>
                 <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD">
+        </div>
+        <div>
             <label for="proposalDate">Lessor's Proposal Date:</label>
                 <input type="text" name ="proposalDate" id ="proposalDate" class ="ntpMOD">
+        </div>
+        <div>
             <label for="proposalNum">Lessor's Proposal Number:</label>
-                <input type="text" name ="proposalNum" id ="proposalNum" class ="ntpMOD">
+            <input type="text" name ="proposalNum" id ="proposalNum" class ="ntpMOD">
+        </div>
+        <div>
             <label for="amountNTP">Project Cost:</label>
-                <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD">
+            <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD">
+        </div>
+        <div>
             <label for="dateNTP">Period of Performance Start:</label>
-                <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD" >
+            <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD" >
+        </div>
+        <div>
             <label for="dateNTP2">Period of Performance End:</label>
-                <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD">
-            <div class ="radio">
+            <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD">
+        </div>  
+        <div class ="radio">
                 <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
                 <label for ="fm">FM</label>
                 <input type = "radio" id = "po" name ="fmORpo" value ="PO">
                 <label for="po">PO</label>
                 <input type="text" class ="ntpMOD" >
-             </div>
+        </div>
+        <div>
             <label for="lcoNTP">LCO:</label>
-                <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
+            <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
+        </div>
+        <div>
+            <label for="reasonNTP">Purpose of MOD:</label>
+            <textarea name ="reasonNTP" id ="reasonNTP" target = "reason" class ="ntpMOD" cols ="20" rows = "2"></textarea> 
+        </div>
+            
              <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
-            </div>   
+            </div>  
+            
         <div class ="textbox" id ="textbox">
             <label for = "modResult">Generated MOD</label>
                 <textarea id = "modResult" name ="modResult" cols ="80" rows = "8"style = "width: 708px; height: 436px;"></textarea>

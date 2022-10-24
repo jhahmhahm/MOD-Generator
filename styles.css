@@ -97,17 +97,19 @@ input[type=submit]{
 }
 
 .formcontainer{
-    display: grid;
-    margin-left: 350px;
-    margin-right: 250px;
-    width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 250px;
+  width: 30%;
+  gap: 16px;
+  justify-content: flex-start;
 }
 
 .rentform{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 100%;
     height: 100vh;
 }
 
@@ -137,7 +139,7 @@ input[type=text], select {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 100%;
     height: 100vh;
 }
 
@@ -145,7 +147,7 @@ input[type=text], select {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 100%;
     height: 100vh;
 }
 textarea[target = reason]{
@@ -157,7 +159,7 @@ textarea[target = reason]{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 100%;
   height: 100vh;
 }
 
@@ -165,7 +167,7 @@ textarea[target = reason]{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 100%;
   height: 100vh;
 }
 
