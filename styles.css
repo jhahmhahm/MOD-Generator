@@ -61,7 +61,8 @@ input[type=submit]{
 }
 
 .navbar a:hover, .headerDropdown:hover .headerbtn{
-  background-color: red;
+  background-color: #04AA6D;
+  border-radius: 4px;
 }
 
 .headerDropdown-content{
@@ -189,4 +190,39 @@ textarea{
   resize: none;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
+}
+
+.tableContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+table{
+  border-collapse: collapse;
+  border:2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  width: 50%;
+  margin-bottom: 48px;
+}
+
+td, th{
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+th{
+  background-color: #b2beb5;
+}
+
+h1.tableTitle{
+  font-size: 58px;
+  text-decoration: underline;
+}
+
+p.tablePage{
+  width: 50%;
+  margin-top: 0px;
 }
