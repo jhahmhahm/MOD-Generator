@@ -42,7 +42,7 @@
         <div class ="formcontainer" id = "formcontainer">
         <div>
             <label for="modnumNTP">MOD #: </label>
-                <input type="text" name = "modnumNTP" class ="ntpMOD">
+                <input type="text" name = "modnumNTP" class ="ntpMOD"  placeholder="e.g P00123">
         </div>
         <div>
             <label for="reqnumNTP">REQ#:</label>
@@ -58,7 +58,7 @@
         </div>
         <div>
             <label for="sowDate">SOW Date:</label>
-                <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD">
+                <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD"  placeholder="e.g 01/01/2022">
         </div>
         <div>
             <label for="proposalDate">Lessor's Proposal Date:</label>
@@ -70,15 +70,15 @@
         </div>
         <div>
             <label for="amountNTP">Project Cost:</label>
-            <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD">
+            <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD"  placeholder="e.g $12,345.67">
         </div>
         <div>
             <label for="dateNTP">Period of Performance Start:</label>
-            <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD" >
+            <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD"  placeholder="e.g 01/01/2022">
         </div>
         <div>
             <label for="dateNTP2">Period of Performance End:</label>
-            <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD">
+            <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD"  placeholder="e.g 01/01/2023">
         </div>  
         <div class ="radio">
                 <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
@@ -93,7 +93,7 @@
         </div>
         <div>
             <label for="reasonNTP">Purpose of MOD:</label>
-            <textarea name ="reasonNTP" id ="reasonNTP" target = "reason" class ="ntpMOD" cols ="30" rows = "3"></textarea> 
+            <textarea name ="reasonNTP" id ="reasonNTP" target = "reason" class ="ntpMOD" cols ="30" rows = "3"  placeholder="e.g for furntiure moving services/to provide painting services"></textarea> 
         </div>
             
              <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
@@ -119,7 +119,7 @@
                 FmPoValue = po.value;
             }
 
-           const lineItemNtp = `LINE ITEM: \nMOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP to ${ntpData[12].value} located at ${ntpData[2].value} in accordance with the SOW ${ntpData[3].value} dated ${ntpData[4].value}, and Lessor's Proposal dated ${ntpData[5].value}. \nFirm Fixed Price: The total cost for this project, including Lessor's fee is ${ntpData[7].value}. Period of Performance: ${ntpData[8].value} through ${ntpData[9].value}.\n \n`
+           const lineItemNtp = `LINE ITEM: \nMOD-${ntpData[0].value}, REQ. ${ntpData[1].value}, NTP: The Lessor is being given this NTP ${ntpData[12].value} located at ${ntpData[2].value} in accordance with the SOW ${ntpData[3].value} dated ${ntpData[4].value}, and Lessor's Proposal dated ${ntpData[5].value}. \nFirm Fixed Price: The total cost for this project, including Lessor's fee is ${ntpData[7].value}. Period of Performance: ${ntpData[8].value} through ${ntpData[9].value}.\n \n`
 
            const ntpBeforeLine = `PRINT BEFORE LINE ITEM:\n${FmPoValue}: ${ntpData[10].value} \nLCO: ${ntpData[11].value}\n \n`;
            
