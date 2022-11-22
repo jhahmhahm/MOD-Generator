@@ -6,65 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href ="styles.css">
     <link rel="stylesheet" href="../MOD Creator/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>MOD Generator - Utility Rent </title>
+    <title>MOD Tool - Utility Rent </title>
 </head>
 <body>
-    <div class ="navbar">
-        <a href="index.html">Home</a>
-        <div class ="headerDropdown">
-            <button class = "headerbtn">Create A MOD
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="handyman.html">Handyman</a>
-                <a href="ntp.html">NTP</a>
-                <a href="rent.html">Rent</a>
-                <a href="multirent.html">Multi Month Rent</a>
-                <a href="utility.html">Utility Rent</a>
+    <div class="grid-container">
+        <div class ="navbar">
+            <div class="nav-container1">
+                <div class="profile">
+                    <div class="picture">
+                        <img src="img/account.png" alt="">
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="picture">
+                        <img src="img/magnify.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <a href="index.html">Home</a>
+                <div class ="headerDropdown">
+                    <button class = "headerbtn">Create A MOD
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class = "headerDropdown-content">
+                        <a href="handyman.html">Handyman</a>
+                        <a href="ntp.html">NTP</a>
+                        <a href="rent.html">Rent</a>
+                        <a href="multirent.html">Multi Month Rent</a>
+                        <a href="utility.html">Utility Rent</a>
+                    </div>
+                </div>
+                <div class ="headerDropdown">
+                    <button class = "headerbtn">MOD Steps
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class = "headerDropdown-content">
+                        <a href="#">Handyman</a>
+                        <a href="#">NTP</a>
+                        <a href="#">Re-Occurring</a>
+                        <a href="#">De-Obligation</a>
+                        <a href="#">Administrative</a>
+                    </div>
+                </div>
+                <a href ="modType.html">Types of MODs</a>
+            </div>
+            </div>
+        <div class = "utilityform" id ="utilityform">
+            <div class ="formcontainer" id = "formcontainer">
+                <div>
+                    <label for="modnumRent">MOD #:</label>
+                    <input type="text" name ="modnumRent" id ="modnumRent" class ="utilityMOD"  placeholder="e.g P00123">
+                </div>
+                <div>
+                    <label for ="reqnumRent">REQ #:</label>
+                    <input type="text" name = "reqnumRent" id ="reqnumRent" class ="utilityMOD">
+                </div>
+                <div>
+                    <label for="monthyearRent">Month and Year:</label>
+                    <input type="text" name ="monthyearRent" id ="monthyearRent" class ="utilityMOD">
+                </div>
+                <div>
+                    <label for="invoicenumRent"> Invoice #:</label>
+                    <input type="text" name = "invoicenumRent" id ="invoicenumRent" class ="utilityMOD">
+                </div>
+                <div>
+                    <label for="amountRent"> Rent Amount :</label>
+                    <input type="text" name = "amountRent" id ="amountRent" class ="utilityMOD"  placeholder="e.g $12,345.67">
+                </div>
+                <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
+            </div>
+        <div class="textbox-container">
+            <div class ="textbox" id ="textbox">
+                <label for = "modResult">Generated MOD</label>
+                    <textarea id = "modResult" name ="modResult" cols ="80" rows = "8"style = "width: 90%; height: 600px;"></textarea>
             </div>
         </div>
-            <div class ="headerDropdown">
-            <button class = "headerbtn">MOD Steps 
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="#">Handyman</a>
-                <a href="#">NTP</a>
-                <a href="#">Re-Occurring</a>
-                <a href="#">De-Obligation</a>
-                <a href="#">Administrative</a>
+        <div class="announcements">
+            <div class="helpful-tips">
+                <h2>Helpful Tips - Rent</h2>
+                <ul class="tips">
+                    <li>Make sure to confirm that the rental payment has not changed since last month!</li>
+                    <li>State any changes to the rental amount on the Invoice and MOD language.</li>
+                </ul>
             </div>
         </div>
-        <a href ="modType.html">Types of MODs</a>
-    </div>
-    <div class = "utilityform" id ="utilityform">
-        <div class ="formcontainer" id = "formcontainer">
-            <div>
-                <label for="modnumRent">MOD #:</label>
-                <input type="text" name ="modnumRent" id ="modnumRent" class ="utilityMOD"  placeholder="e.g P00123">
-            </div>
-            <div>
-                <label for ="reqnumRent">REQ #:</label>
-                <input type="text" name = "reqnumRent" id ="reqnumRent" class ="utilityMOD">
-            </div>
-            <div>
-                <label for="monthyearRent">Month and Year:</label>
-                <input type="text" name ="monthyearRent" id ="monthyearRent" class ="utilityMOD">
-            </div>
-            <div>
-                <label for="invoicenumRent"> Invoice #:</label>
-                <input type="text" name = "invoicenumRent" id ="invoicenumRent" class ="utilityMOD">
-            </div>    
-            <div>
-                <label for="amountRent"> Rent Amount :</label>
-                <input type="text" name = "amountRent" id ="amountRent" class ="utilityMOD"  placeholder="e.g $12,345.67">
-            </div>    
-            <button id ="utilitybtn" onclick ="generateUtilityMOD()">Generate MOD</button>
         </div>
-    <div class ="textbox" id ="textbox">
-        <label for = "modResult">Generated MOD</label>
-            <textarea id = "modResult" name ="modResult" cols ="80" rows = "8"style = "width: 708px; height: 436px;"></textarea>
-    </div>
     </div>
 <script>
     function generateUtilityMOD(){

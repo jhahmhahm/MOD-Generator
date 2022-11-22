@@ -6,104 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href ="styles.css">
     <link rel="stylesheet" href="../MOD Creator/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>MOD Generator - NTP</title>
+    <title>MOD Tool - NTP</title>
 </head>
 <body>
+<div class="grid-container">
     <div class ="navbar">
-        <a href="index.html">Home</a>
-        <div class ="headerDropdown">
-            <button class = "headerbtn">Create A MOD
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="handyman.html">Handyman</a>
-                <a href="ntp.html">NTP</a>
-                <a href="rent.html">Rent</a>
-                <a href="multirent.html">Multi Month Rent</a>
-                <a href="utility.html">Utility Rent</a>
+        <div class="nav-container1">
+            <div class="profile">
+                <div class="picture">
+                    <img src="img/account.png" alt="">
+                </div>
+            </div>
+            <div class="search">
+                <div class="picture">
+                    <img src="img/magnify.png" alt="">
+                </div>
             </div>
         </div>
-
+        <div class="container2">
+            <a href="index.html">Home</a>
             <div class ="headerDropdown">
-            <button class = "headerbtn">MOD Steps 
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="#">Handyman</a>
-                <a href="#">NTP</a>
-                <a href="#">Re-Occurring</a>
-                <a href="#">De-Obligation</a>
-                <a href="#">Administrative</a>
+                <button class = "headerbtn">Create A MOD
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class = "headerDropdown-content">
+                    <a href="handyman.html">Handyman</a>
+                    <a href="ntp.html">NTP</a>
+                    <a href="rent.html">Rent</a>
+                    <a href="multirent.html">Multi Month Rent</a>
+                    <a href="utility.html">Utility Rent</a>
+                </div>
             </div>
+            <div class ="headerDropdown">
+                <button class = "headerbtn">MOD Steps 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class = "headerDropdown-content">
+                    <a href="#">Handyman</a>
+                    <a href="#">NTP</a>
+                    <a href="#">Re-Occurring</a>
+                    <a href="#">De-Obligation</a>
+                    <a href="#">Administrative</a>
+                </div>
+            </div>
+            <a href ="modType.html">Types of MODs</a>
         </div>
-        <a href ="modType.html">Types of MODs</a>
-    </div>
+        </div>
     <div class = "ntpform" id ="ntpform">
-        <div class ="formcontainer" id = "formcontainer">
-        <div>
+        <div class ="formcontainer ntpcontainer" id = "formcontainer" >
+        <div class>
             <label for="modnumNTP">MOD #: </label>
                 <input type="text" name = "modnumNTP" class ="ntpMOD"  placeholder="e.g P00123">
         </div>
-        <div>
+        <div class>
             <label for="reqnumNTP">REQ#:</label>
                 <input type="text" name ="reqnumNTP" id ="reqnumNTP" class ="ntpMOD">
         </div>
-        <div>
+        <div class>
             <label for="addressNTP">Project Location:</label>
                 <input type="text" name ="addressNTP" id ="addressNTP" class ="ntpMOD">
          </div>  
-        <div>
+        <div class>
             <label for="sowNum">SOW Number:</label>
             <input type="text" name ="sowNum" id = "sowNum" class ="ntpMOD"> 
         </div>
-        <div>
+        <div class>
             <label for="sowDate">SOW Date:</label>
                 <input type="text" name ="sowDate" id ="sowDate" class ="ntpMOD"  placeholder="e.g 01/01/2022">
         </div>
-        <div>
-            <label for="proposalDate">Lessor's Proposal Date:</label>
+        <div class>
+            <label for="proposalDate">Lessor Proposal Date:</label>
                 <input type="text" name ="proposalDate" id ="proposalDate" class ="ntpMOD">
         </div>
-        <div>
-            <label for="proposalNum">Lessor's Proposal Number:</label>
+        <div class>
+            <label for="proposalNum">Lessor Proposal #:</label>
             <input type="text" name ="proposalNum" id ="proposalNum" class ="ntpMOD">
         </div>
-        <div>
+        <div class>
             <label for="amountNTP">Project Cost:</label>
             <input type="text" name ="amountNTP" id ="amountNTP" class ="ntpMOD"  placeholder="e.g $12,345.67">
         </div>
-        <div>
+        <div class>
             <label for="dateNTP">Period of Performance Start:</label>
             <input type="text" name = "dateNTP" id ="dateNTP" class ="ntpMOD"  placeholder="e.g 01/01/2022">
         </div>
-        <div>
+        <div class>
             <label for="dateNTP2">Period of Performance End:</label>
             <input type="text" name = "dateNTP2" id ="dateNTP2" class ="ntpMOD"  placeholder="e.g 01/01/2023">
         </div>  
-        <div class ="radio">
-                <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
-                <label for ="fm">FM</label>
-                <input type = "radio" id = "po" name ="fmORpo" value ="PO">
-                <label for="po">PO</label>
+        <div class ="radio" id="radio">
+                <div id="radio-wrapper">
+                    <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
+                    <label for ="fm">FM</label>
+                    <input type = "radio" id = "po" name ="fmORpo" value ="PO">
+                    <label for="po">PO</label>
+                </div>
                 <input type="text" class ="ntpMOD" >
         </div>
-        <div>
+        <div class>
             <label for="lcoNTP">LCO:</label>
             <input type="text" name = "lcoNTP" id ="lcoNTP" class ="ntpMOD">
         </div>
-        <div>
+        <div class ='ntptext'>
             <label for="reasonNTP">Purpose of MOD:</label>
             <textarea name ="reasonNTP" id ="reasonNTP" target = "reason" class ="ntpMOD" cols ="30" rows = "3"  placeholder="e.g for furntiure moving services/to provide painting services"></textarea> 
         </div>
             
-             <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
-            </div>  
+        <button id ="ntpbtn" onclick ="generateNtpMOD()">Generate MOD</button>
+        </div>  
             
+    <div class="textbox-container">
         <div class ="textbox" id ="textbox">
             <label for = "modResult">Generated MOD</label>
-                <textarea id = "modResult" name ="modResult" cols ="80" rows = "8"style = "width: 708px; height: 436px;"></textarea>
-        </div> 
+                <textarea id = "modResult" name ="modResult" cols ="80" rows = "8"style = "width: 90%; height: 600px;"></textarea>
+        </div>
+    </div> 
+    <div class="announcements">
+        <div class="helpful-tips">
+            <h2>Helpful Tips - NTP</h2>
+            <ul class="tips">
+                <li>Make sure to distinguish between a Scope of Work OR Statement of Work.</li>
+                <li>Projects over $10,000 require 3 bids. Over $150,000 also require a Gov. IGE.</li>
+                <li>All projects require an SOW, Request for Proposal and a Proposal.</li>
+                <li>If you have a C#, enter the # into the 'Project Information' field in the General Information tab.</li>
+                <li>If the POP exceeds the lease term: Double check the Lease Matrix. If the expiration dates match, then adjust the POP of the MOD to end the day prior to lease expiration. Let the CO know of this change in the comments section when routing.</li>
+            </ul>
+        </div>
     </div>
+
+    </div>
+</div>
 <script>
      function generateNtpMOD(){
            const fm = document.getElementById("fm");

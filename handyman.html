@@ -6,78 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href ="styles.css">
     <link rel="stylesheet" href="../MOD Creator/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>MOD Generator - Handyman</title>
+    <title>MOD Tool - Handyman</title>
 </head>
 <body>
-    <div class ="navbar">
-        <a href="index.html">Home</a>
-        <div class ="headerDropdown">
-            <button class = "headerbtn">Create A MOD
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="handyman.html">Handyman</a>
-                <a href="ntp.html">NTP</a>
-                <a href="rent.html">Rent</a>
-                <a href="multirent.html">Multi Month Rent</a>
-                <a href="utility.html">Utility Rent</a>
+<div class="grid-container">
+        <div class ="navbar">
+            <div class="nav-container1">
+                <div class="profile">
+                    <div class="picture">
+                        <img src="img/account.png" alt="">
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="picture">
+                        <img src="img/magnify.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <a href="index.html">Home</a>
+                <div class ="headerDropdown">
+                    <button class = "headerbtn">Create A MOD
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class = "headerDropdown-content">
+                        <a href="handyman.html">Handyman</a>
+                        <a href="ntp.html">NTP</a>
+                        <a href="rent.html">Rent</a>
+                        <a href="multirent.html">Multi Month Rent</a>
+                        <a href="utility.html">Utility Rent</a>
+                    </div>
+                </div>
+                <div class ="headerDropdown">
+                    <button class = "headerbtn">MOD Steps 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class = "headerDropdown-content">
+                        <a href="#">Handyman</a>
+                        <a href="#">NTP</a>
+                        <a href="#">Re-Occurring</a>
+                        <a href="#">De-Obligation</a>
+                        <a href="#">Administrative</a>
+                    </div>
+                </div>
+                <a href ="modType.html">Types of MODs</a>
             </div>
         </div>
-            <div class ="headerDropdown">
-            <button class = "headerbtn">MOD Steps 
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class = "headerDropdown-content">
-                <a href="#">Handyman</a>
-                <a href="#">NTP</a>
-                <a href="#">Re-Occurring</a>
-                <a href="#">De-Obligation</a>
-                <a href="#">Administrative</a>
+        <div class = "handymanform" id ="handymanform">
+            <div class ="formcontainer" id = "formcontainer">
+            <div>
+                <label for="modnumHandy">MOD #: </label>
+                <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD" placeholder="e.g P00123">
+            </div>
+            <div>
+                <label for="reqnumHandy">REQ #:</label>
+                <input type="text" name = "reqnumHandy" id = "reqnumHandy" class ="handyMOD">
+            </div>
+            <div>
+                <label for="ic">IC:</label>
+                <input type="text" name ="ic" id ="ic" class ="handyMOD">
+            </div>
+            <div>
+                <label for="amount">Dollar Amount:</label>
+                <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD" placeholder="e.g $5,000.00">
+            </div>
+            <div>
+                <label for="addressHandy">Project Location:</label>
+                <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
+            </div>
+            <div class ="radio" id ='radio'>
+                <div id="radio-wrapper">
+                    <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
+                    <label for ="fm">FM</label>
+                    <input type = "radio" id = "po" name ="fmORpo" value ="PO">
+                    <label for="po">PO</label>
+                </div>
+                <input type="text" name = "fmHandy" id ="fmHandy" class ="handyMOD">
+            </div>
+            <div>
+                <label for="lcoHandy">LCO:</label>
+                <input type="text" name = "lcoHandy" id ="lcoHandy" class ="handyMOD">
+            </div>
+                <button type = "button" id ="handybtn" onclick ="generateHandymanMOD()">Generate MOD</button>
+            </div>
+            <div class="textbox-container">
+                <div class ="textbox" id ="textbox">
+                <label for = "modResult">Generated MOD</label>
+                    <textarea id = "modResult" name ="modResult" cols ="80" rows = "8" style = "width: 90%; height: 600px;"></textarea>
+                </div>
+            </div>
+        <div class="announcements">
+            <div class="helpful-tips">
+                <h2>Helpful Tips - Handyman</h2>
+                <ul class="tips">
+                    <li>Double space the POP from the Line Item.</li>
+                    <li>Edit the Reason For Modification to: 'Additional Work - Handyman Services' when in the E-Contract section.</li>
+                </ul>
             </div>
         </div>
-        <a href ="modType.html">Types of MODs</a>
-    </div>
-    <div class = "handymanform" id ="handymanform">
-        <div class ="formcontainer" id = "formcontainer">
-        <div>
-            <label for="modnumHandy">MOD #: </label>
-            <input type="text" name = "modnumHandy" id="modnumHandy" class ="handyMOD" placeholder="e.g P00123">
         </div>
-        <div>
-            <label for="reqnumHandy">REQ #:</label>
-            <input type="text" name = "reqnumHandy" id = "reqnumHandy" class ="handyMOD">
-        </div>
-        <div>
-            <label for="ic">IC:</label>
-            <input type="text" name ="ic" id ="ic" class ="handyMOD">
-        </div>
-        <div>
-            <label for="amount">Dollar Amount:</label>
-            <input type="text" name ="amountHandy" id = "amountHandy" class ="handyMOD" placeholder="e.g $5,000.00">
-        </div>
-        <div>
-            <label for="addressHandy">Project Location:</label>
-            <input type="text" name ="addressHandy" id ="addressHandy" class ="handyMOD">
-        </div>      
-        <div class ="radio">
-            <input type = "radio" id = "fm" name ="fmORpo" value ="FM">
-            <label for ="fm">FM</label>
-            <input type = "radio" id = "po" name ="fmORpo" value ="PO">
-            <label for="po">PO</label>
-            <input type="text" name = "fmHandy" id ="fmHandy" class ="handyMOD">
-        </div>
-        <div>
-            <label for="lcoHandy">LCO:</label>
-            <input type="text" name = "lcoHandy" id ="lcoHandy" class ="handyMOD">
-        </div>
-            <button type = "button" id ="handybtn" onclick ="generateHandymanMOD()">Generate MOD</button>
-
-        </div> 
-        <div class ="textbox" id ="textbox">
-        <label for = "modResult">Generated MOD</label>
-            <textarea id = "modResult" name ="modResult" cols ="80" rows = "8" style = "width: 708px; height: 436px;"></textarea>
-        </div>
-    </div>
+        
+</div>
 <script>
     function generateHandymanMOD(){
             const fm = document.getElementById("fm");

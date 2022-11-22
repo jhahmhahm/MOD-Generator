@@ -6,10 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href ="styles.css">
     <link rel="stylesheet" href="../MOD Creator/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>MOD Generator</title>
+    <title>MOD Tool</title>
 </head>
 <body>
+<div class="grid-container">
+<div class="side-navbar">
+    <div id="menuToggle">
+        <div class="menu">
+            <ul>
+                <li>Profile</li>
+                <li>Messages</li>
+                <li>History</li>
+                <li>To-Do List</li>
+                <li>Communities</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class ="navbar">
+<div class="nav-container1">
+    <div class="profile">
+        <div class="picture">
+            <img src="img/account.png" alt="">
+        </div>
+    </div>
+    <div class="search">
+        <div class="picture">
+            <img src="img/magnify.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="container2">
     <a href="index.html">Home</a>
     <div class ="headerDropdown">
         <button class = "headerbtn">Create A MOD
@@ -37,6 +65,9 @@
     </div>
     <a href ="modType.html">Types of MODs</a>
 </div>
+</div>
+
+
     <div class ="dropdown" id ="dropdown" value ="x">
         <form id ="form" action="">
             <label for ="select-mod" >What type of MOD are you creating?</label>
@@ -52,7 +83,7 @@
             <input type ="submit" value ="Continue" onclick = "getMODType()">
         </form>
     </div>
-
+</div>
 <script>
     function getMODType(){
         let dropdown = document.getElementById("select-mod");
